@@ -1,0 +1,15 @@
+<div class="card card-block" >
+    <div class="card-body" [style.padding]="'10px'">
+        <nav class="navbar navbar-dark bg-primary mb-2" [ngClass]="{'bg-danger':
+    isDanger(), 'bg-success': !isDanger()}" [style.padding]="'10px'">
+            <h1 class="navbar-brand mb-0"><ng-content select="metric-title"></ng-content></h1>
+        </nav>
+        <h4 class="card-title" [style.padding]="'10px'">{{val}}/{{max}} ({{val / max |
+            percent:'1.0-2'}})</h4>
+        <p class="card-text" [style.padding]="'10px'">
+            <ng-content select="metric-description"></ng-content>
+        </p>
+        <ngb-progressbar [value]="val" [max]="max" [type]="isDanger() ?
+    'danger' : 'success'"></ngb-progressbar>
+    </div>
+</div>

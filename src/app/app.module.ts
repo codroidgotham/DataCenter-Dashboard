@@ -1,18 +1,37 @@
-import { NgModule } from '@angular/core';
+import { NgModule,NO_ERRORS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MetricComponent } from './metric/metric.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NodesComponent } from './nodes/nodes.component';
+import { NodesRowComponent } from './nodes-row/nodes-row.component';
+import { NodesDetailComponent } from './nodes-detail/nodes-detail.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    DashboardComponent,
+    MetricComponent,
+    NodesComponent,
+    NodesRowComponent,
+    NodesDetailComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas:[NO_ERRORS_SCHEMA],
+  entryComponents:[NodesDetailComponent,AlertComponent]
+
 })
 export class AppModule { }
